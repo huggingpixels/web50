@@ -1,0 +1,95 @@
+form, header {
+    display: grid;
+    font-family: arial,sans-serif;
+}
+
+header {
+    grid-template-columns: 1fr min-content;
+    grid-template-rows: min-content;
+    gap: 30px;
+    margin-bottom: 30px;
+    grid-template-areas:
+    ". basic"
+}
+
+#basic-search {
+    grid-area: basic;
+
+    white-space: nowrap;
+    color: rgba(0,0,0,0.87);
+    text-decoration: none;
+    outline: none;
+    font-size: 13px;
+}
+
+form {
+    grid-template-columns: minmax(167px, 16%) minmax(167px, 50%) 1fr;
+    grid-template-rows: repeat(8, 42px);
+    grid-template-areas:
+    "form-title     .               ."
+    ".              .               ."
+    "field-label-a  field-input-a   ."
+    "field-label-qb field-input-qb  ."
+    "field-label-q  field-input-q   ."
+    "field-label-q2 field-input-q2  ."
+    ".              .               ."
+    ".              form-submit     ."
+}
+
+#form-title {
+    grid-area: form-title;
+}
+
+#field-label-a {
+    grid-area: field-label-a;
+}
+
+#field-label-qb {
+    grid-area: field-label-qb;
+}
+
+#field-label-q {
+    grid-area: field-label-q;
+}
+
+#field-label-q2 {
+    grid-area: field-label-q2;
+}
+
+#field-input-a {
+    grid-area: field-input-a;
+}
+
+#field-input-qb {
+    grid-area: field-input-qb;
+}
+
+#field-input-q {
+    grid-area: field-input-q;
+}
+
+#field-input-q2 {
+    grid-area: field-input-q2;
+}
+
+#form-submit {
+    grid-area: form-submit;
+}
+
+label {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+input[type="text"] {
+    height: 25px;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    color: white;
+    background-color: #4d90fe;
+    border: 1px solid #4d90fe;
+    border-radius: 3px;
+} 
