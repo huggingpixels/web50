@@ -1,0 +1,109 @@
+form, header, #logo, #buttons {
+    display: grid;
+    font-family: arial,sans-serif;
+}
+
+header {
+    grid-template-columns: 1fr min-content min-content;
+    grid-template-rows: min-content;
+    gap: 30px;
+    margin-bottom: 30px;
+    grid-template-areas:
+    ". advanced image basic"
+}
+
+#advanced-search {
+    grid-area: advanced;
+}
+
+#image-search {
+    grid-area: image;
+}
+
+#basic-search {
+    grid-area: basic;
+}
+
+#advanced-search, #image-search, #basic-search {
+    white-space: nowrap;
+    color: rgba(0,0,0,0.87);
+    text-decoration: none;
+    outline: none;
+    font-size: 13px;
+}
+
+#advanced-search:hover, #image-search:hover, #basic-search:hover {
+    text-decoration: underline;
+}
+
+#logo {
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: min-content;
+    margin-top: 30vh;
+    margin-bottom: 30px;
+    grid-template-areas:
+    ". google-logo .";
+    align-items: center;
+}
+
+#google-logo {
+    grid-area: google-logo;
+
+    width: 280px;
+}
+
+form {
+    grid-template-columns: 1fr minmax(min-content, 584px) 1fr;
+    grid-template-rows: repeat(2, min-content);
+    gap: 30px;
+    grid-template-areas: 
+    ". search ."
+    ". buttons ."
+}
+
+#buttons {
+    grid-area: buttons;
+
+    grid-template-columns: auto min-content 20px min-content auto;
+    grid-template-areas: 
+    ". submit . lucky ."
+}
+
+#submit {
+    grid-area: submit;
+}
+
+#lucky {
+    grid-area: lucky;
+}
+
+input[type="text"] {
+    grid-area: search;
+
+    height: 44px;
+    padding-left: 18px;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+}
+
+#submit, #lucky {
+    height: 36px;
+    padding: 0 16px;
+    
+    font-size: 14px;
+    line-height: 27px;
+    text-align: center;
+
+    cursor: pointer;
+
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 3px;
+    color: #3c4043;
+}
+
+#submit:hover, #lucky:hover {
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    border: 1px solid #dadce0;
+    color: #202124;
+}
