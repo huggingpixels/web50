@@ -1,15 +1,31 @@
-form, header {
+body {
+    margin: 0;
+    padding: 0;
+}
+
+form, header, title {
     display: grid;
     font-family: arial,sans-serif;
 }
 
 header {
-    grid-template-columns: 1fr min-content;
-    grid-template-rows: min-content;
-    gap: 30px;
-    margin-bottom: 30px;
+    grid-template-columns: 30px min-content 1fr min-content 30px;
+    grid-template-rows: 60px;
     grid-template-areas:
-    ". basic"
+    ". logo . basic .";
+
+    background: #f1f1f1;
+    align-items: center;
+}
+
+#logo {
+    grid-area: logo;
+
+    height: 30px;
+}
+
+#logo > img {
+    height: 30px;
 }
 
 #basic-search {
@@ -19,25 +35,39 @@ header {
     color: rgba(0,0,0,0.87);
     text-decoration: none;
     outline: none;
-    font-size: 13px;
+    font-size: 14px;
+}
+
+title {
+    grid-template-columns: minmax(167px, 16%) 1fr;
+
+    color: #d93025;
+    font-size: 20px;
+    padding: 25px 35px;
+    border-bottom: 1px solid #d9d9d9;
 }
 
 form {
-    grid-template-columns: minmax(167px, 16%) minmax(167px, 50%) 1fr;
+    grid-template-columns: minmax(167px, 16%) minmax(167px, 44%) 1fr;
     grid-template-rows: repeat(8, 42px);
     grid-template-areas:
     "form-title     .               ."
-    ".              .               ."
     "field-label-a  field-input-a   ."
     "field-label-qb field-input-qb  ."
     "field-label-q  field-input-q   ."
     "field-label-q2 field-input-q2  ."
-    ".              .               ."
-    ".              form-submit     ."
+    ".              form-submit     .";
+
+    margin: 35px;
 }
 
 #form-title {
     grid-area: form-title;
+
+    font-size: 16px;
+    min-height: 42px;
+    font-weight: 500;
+    color: #333;
 }
 
 #field-label-a {
@@ -74,11 +104,15 @@ form {
 
 #form-submit {
     grid-area: form-submit;
+
+    margin-top: 15px;
 }
 
 label {
     font-size: 14px;
     line-height: 16px;
+
+    color: #222;
 }
 
 input[type="text"] {
@@ -92,4 +126,11 @@ input[type="submit"] {
     background-color: #4d90fe;
     border: 1px solid #4d90fe;
     border-radius: 3px;
+    width: max-content;
+    padding: 0 12px;
+    height: 30px;
+    font-size: 11px;
+    font-weight: bold;
+    white-space: nowrap;
+    justify-self: end;
 } 
