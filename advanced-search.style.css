@@ -49,7 +49,7 @@ title {
 
 form {
     grid-template-columns: minmax(167px, 16%) minmax(167px, 44%) 1fr;
-    grid-template-rows: repeat(8, 42px);
+    grid-template-rows: repeat(6, 42px);
     grid-template-areas:
     "form-title     .               ."
     "field-label-a  field-input-a   ."
